@@ -19,6 +19,7 @@
   "author": "Vladimir Shestakov boolive@yandex.ru",
   "license": "ISC",
   "dependencies": {
+    "@babel/eslint-parser": "^7.18.2",
     "@bem-react/classname": "^1.5.12",
     "@loadable/component": "^5.15.2",
     "@loadable/server": "^5.15.2",
