@@ -1,10 +1,9 @@
-import mc from "merge-change";
+import mc from 'merge-change';
 
 /**
  * Базовый класс модуля хранилища
  */
 class StoreModule {
-
   /**
    * @param config {Object} Конфиг модуля
    * @param services {Services}
@@ -21,7 +20,7 @@ class StoreModule {
    */
   defaultConfig() {
     return {
-      name: 'base' //поменяется сервисом при создании экземпляра
+      name: 'base', //поменяется сервисом при создании экземпляра
     };
   }
 
@@ -47,10 +46,13 @@ class StoreModule {
    * @param description {String} Описание действия для логирования
    */
   setState(state, description = 'Установка') {
-    this.store.setState({
-      ...this.store.getState(),
-      [this.config.name]: state
-    }, description);
+    this.store.setState(
+      {
+        ...this.store.getState(),
+        [this.config.name]: state,
+      },
+      description,
+    );
   }
 
   /**

@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import LayoutPage from '@src/components/layouts/layout-page';
 import HeaderContainer from '@src/containers/header-container';
-import CanvasLeafFall from '@src/components/graphic/canvas-leaf-fall';
+import Canvas from '@src/components/canvas';
+import useServices from '@src/utils/hooks/use-services';
 
 function LeafFall() {
+  const leafFallRef = useRef(null);
+
+  const services = useServices();
+
+  //!delete
+  const CanvasleafFall = services.canvas.leafFall;
+
+  useEffect(() => {
+    services.canvas.leafFall.mount(leafFallRef.current);
+    //!delete
+    console.log(CanvasleafFall);
+    services.canvas.leafFall.render();
+    return () => {
+      services.canvas.leafFall.unmount();
+    };
+  }, []);
+
   return (
     <LayoutPage header={<HeaderContainer />}>
-      <CanvasLeafFall>
-        <h1>Что-то пошло не по плану</h1>
-      </CanvasLeafFall>
+      <Canvas ref={leafFallRef} />
     </LayoutPage>
   );
 }

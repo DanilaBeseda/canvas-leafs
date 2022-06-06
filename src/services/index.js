@@ -109,6 +109,14 @@ class Services {
   get spec() {
     return this.get('spec');
   }
+
+  /**
+   * Сервис 2d графики на canvas
+   * @returns {CanvasService}
+   */
+  get canvas() {
+    return this.get('canvas');
+  }
 }
 
 export default Services;

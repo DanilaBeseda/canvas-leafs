@@ -6,15 +6,15 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider as StoreProvider} from 'react-redux';
-import RouterProvider from "@src/containers/router-provider";
+import { Provider as StoreProvider } from 'react-redux';
+import RouterProvider from '@src/containers/router-provider';
 import configDefault from 'config.js';
 import Services from '@src/services';
 import App from '@src/app';
 import mc from 'merge-change';
-import ServicesProvider from "@src/services/provider";
+import ServicesProvider from '@src/services/provider';
 
-(async function (tagId = 'app', config = {}){
+(async function (tagId = 'app', config = {}) {
   // Итоговый конфиг
   config = mc.merge(configDefault, config);
 
@@ -37,7 +37,7 @@ import ServicesProvider from "@src/services/provider";
   render(
     <ServicesProvider services={services}>
       <RouterProvider navigation={services.navigation}>
-        <App/>
+        <App />
       </RouterProvider>
     </ServicesProvider>,
     document.getElementById(tagId),

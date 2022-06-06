@@ -11,14 +11,12 @@ let config = {
       //auth:{} base auth
     },
     // Настройки для конкретных модулей api по их названиям
-    endpoints:{
-      users: {
-
-      },
+    endpoints: {
+      users: {},
       ssr: {
-        baseURL: ''
-      }
-    }
+        baseURL: '',
+      },
+    },
   },
 
   // Сервис состояний и действий (redux)
@@ -28,10 +26,10 @@ let config = {
     // Настройки для конкретных модулей состояния по их названиям
     states: {
       session: {
-        tokenHeader: 'X-Token'
+        tokenHeader: 'X-Token',
       },
       articles: {},
-    }
+    },
   },
 
   // Сервис навигации
@@ -63,8 +61,15 @@ let config = {
   // Сервис рендера на сервере
   // Также используется на клиенте для учёта результатов серверного рендера
   ssr: {
-    maxDepth: 10
-  }
+    maxDepth: 10,
+  },
+
+  canvas: {
+    leafs: {
+      //настройки листопада
+      dpr: 1,
+    },
+  },
 };
 
 module.exports = config;

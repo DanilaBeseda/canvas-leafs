@@ -58,6 +58,7 @@ let config = {
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     alias: {
       '@src': path.resolve(__dirname, './src'),
+      '@theme': path.resolve(__dirname, './src/utils/theme')
     },
   },
   experiments: {

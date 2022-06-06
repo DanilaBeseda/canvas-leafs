@@ -5,7 +5,6 @@ import mc from 'merge-change';
  * Хранилище состояния приложения
  */
 class StoreService {
-
   constructor() {
     // Состояние приложения (данные всех модулей)
     this.state = {};
@@ -20,7 +19,7 @@ class StoreService {
     this.config = config;
     const names = Object.keys(modules);
     for (const name of names) {
-      this.initModule({name});
+      this.initModule({ name });
     }
     return this;
   }
@@ -74,7 +73,11 @@ class StoreService {
    */
   setState(newState, description = 'Устанока') {
     if (this.config.log) {
-      console.group(`%c${'store.setState'} %c${description}`, `color: ${'#777'}; font-weight: normal`, `color: ${'#333'}; font-weight: bold`);
+      console.group(
+        `%c${'store.setState'} %c${description}`,
+        `color: ${'#777'}; font-weight: normal`,
+        `color: ${'#333'}; font-weight: bold`,
+      );
       console.log(`%c${'prev:'}`, `color: ${'#d77332'}`, this.state);
       console.log(`%c${'next:'}`, `color: ${'#2fa827'}`, newState);
       console.groupEnd();
@@ -130,7 +133,6 @@ class StoreService {
   get formLogin() {
     return this.get('formLogin');
   }
-
 }
 
 export default StoreService;
