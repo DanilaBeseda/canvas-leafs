@@ -1,26 +1,26 @@
-@import "../../../utils/theme/variables.less";
+@import '../../../utils/theme/variables.less';
 
 .LayoutHeader {
   background: @grayLight;
   border-bottom: 1px solid @grayLight;
   color: @white;
 
-  &__wrap{
+  &__wrap {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    height: 49px;
+    height: @header-height - 1px;
   }
 
-  &__left{
+  &__left {
     text-align: left;
   }
-  &__center{
+  &__center {
     text-align: center;
   }
-  &__right{
+  &__right {
     text-align: right;
   }
 

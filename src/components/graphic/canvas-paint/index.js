@@ -47,7 +47,7 @@ function CanvasPaint({ children }) {
       <canvas
         ref={canvasRef}
         width={window.innerWidth}
-        height={window.innerHeight}
+        height={window.innerHeight - 60}
         onMouseDown={onMouseDown}
         onMouseUp={onMouseUp}
         onMouseMove={onMouseMove}

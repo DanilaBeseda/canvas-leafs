@@ -5,12 +5,17 @@ class CanvasService {
   init(config, services) {
     this.config = config;
     this.services = services;
+    // Модули canvas
     this.modules = {};
 
-    Object.keys(modules).forEach(name => this.initGraphic({ name }));
+    Object.keys(modules).forEach(name => this.initCanvas({ name }));
   }
 
-  initGraphic(config) {
+  /**
+   * Инициализация модулей canvas
+   * @param {Object} config
+   */
+  initCanvas(config) {
     if (!config.name) throw new Error('Undefined graphic module name ');
     config = mc.merge(this.config[config.name], config);
 
@@ -18,13 +23,13 @@ class CanvasService {
     if (!config.proto) config.proto = config.name;
     if (!modules[config.proto]) throw new Error(`Not found graphic module "${config.name}"`);
 
-    // Cохранить экземпляр в this.modules
+    // Cохранение экземпляра в this.modules
     const Constructor = modules[config.proto];
     this.modules[config.name] = new Constructor(config, this.services);
   }
 
   /**
-   * Доступ к модулю состояния
+   * Доступ к модулю canvas
    * @param name {String} Название модуля
    * @return {CanvasModule}
    */

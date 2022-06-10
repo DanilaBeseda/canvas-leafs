@@ -67,7 +67,6 @@ let config = {
   canvas: {
     leafs: {
       //настройки листопада
-      dpr: 1,
     },
   },
 };
