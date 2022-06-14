@@ -1,8 +1,8 @@
 import Leaf from './leaf';
 import * as leafImages from '@theme/images/leafs';
 
-class CanvasLeafFall {
-  constructor(config, services) {
+class LeafFallCervice {
+  constructor() {
     this.render = this.render.bind(this);
     this.resize = this.resize.bind(this);
 
@@ -13,10 +13,15 @@ class CanvasLeafFall {
     this.images = [];
     this.leafs = [];
     this.lastTime = 0;
+  }
 
-    this.dpr = 1;
-    this.timeInterval = 1000;
-    this.leafsLimit = 25;
+  init(config, services) {
+    this.config = config;
+    this.services = services;
+
+    this.dpr = config.dpr;
+    this.timeInterval = config.timeInterval;
+    this.leafsLimit = config.leafsLimit;
   }
 
   /**
@@ -91,7 +96,12 @@ class CanvasLeafFall {
 
     if (isTime && isLimit) {
       this.leafs.push(
-        new Leaf(this.randomElement(this.images), this.canvas.width, this.canvas.height),
+        new Leaf(
+          this.config,
+          this.randomElement(this.images),
+          this.canvas.width,
+          this.canvas.height,
+        ),
       );
       this.lastTime = timestamp;
     }
@@ -116,4 +126,4 @@ class CanvasLeafFall {
   }
 }
 
-export default CanvasLeafFall;
+export default LeafFallCervice;

@@ -2,7 +2,7 @@ import SimplexNoise from 'simplex-noise';
 const simplex = new SimplexNoise();
 
 class Leaf {
-  constructor(image, canvasWidth, canvasHeight) {
+  constructor(config, image, canvasWidth, canvasHeight) {
     this.image = image;
     this.canvasWidth = canvasWidth;
     this.canvasHeight = canvasHeight;
@@ -13,10 +13,10 @@ class Leaf {
     this.yo = -100;
     this.y = 0;
     this.time0 = performance.now();
-    this.angleChange = 3;
+    this.angleChange = config.angleChange;
     this.angle = 0;
-    this.deviation = 3;
-    this.speed = 0.001;
+    this.deviation = config.deviation;
+    this.speed = config.speed;
     this.imageSize = this.randomImageSize(this.image.width, this.image.height);
 
     this.perlinX = this.x + 100 * Math.random();

@@ -5,5 +5,5 @@ export default {
   store: () => import(/* webpackChunkName: "service-store" */ '@src/services/store'),
   ssr: () => import(/* webpackChunkName: "service-ssr" */ '@src/services/ssr'),
   spec: () => import(/* webpackChunkName: "service-spec" */ '@src/services/spec'),
-  canvas: () => import(/* webpackChunkName: "service-canvas" */ '@src/services/canvas'),
+  leafFall: () => import(/* webpackChunkName: "service-leaf-fall" */ '@src/services/leaf-fall'),
 };

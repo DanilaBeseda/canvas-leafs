@@ -10,8 +10,8 @@ function LeafFall() {
   const services = useServices();
 
   useEffect(() => {
-    services.canvas.leafFall.mount(ref.current);
-    return () => services.canvas.leafFall.unmount();
+    services.leafFall.mount(ref.current);
+    return () => services.leafFall.unmount();
   }, []);
 
   return (

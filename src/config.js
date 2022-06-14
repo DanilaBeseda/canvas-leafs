@@ -64,10 +64,13 @@ let config = {
     maxDepth: 10,
   },
 
-  canvas: {
-    leafs: {
-      //настройки листопада
-    },
+  leafFall: {
+    dpr: 1,
+    timeInterval: 1000,
+    leafsLimit: 25,
+    angleChange: 3,
+    deviation: 3,
+    speed: 0.001,
   },
 };
 

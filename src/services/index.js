@@ -111,11 +111,11 @@ class Services {
   }
 
   /**
-   * Сервис 2d графики на canvas
-   * @returns {CanvasService}
+   * Сервис листопада на canvas
+   * @returns {LeafFallCervice}
    */
-  get canvas() {
-    return this.get('canvas');
+  get leafFall() {
+    return this.get('leafFall');
   }
 }
 
